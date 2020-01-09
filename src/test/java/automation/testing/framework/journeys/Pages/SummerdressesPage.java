@@ -122,7 +122,7 @@ public class SummerdressesPage {
     public void clickPrintedSummerDress() {
         summerDresses_po.clickPrintedDress();
         summerDresses_po.waitForPageToLoad();
-        webDriverHandler.getDriver().switchTo().frame(0);
+//        webDriverHandler.getDriver().switchTo().frame(0);
 
         Assert.assertTrue(summerDresses_po.summerDressDisplayed());
 
