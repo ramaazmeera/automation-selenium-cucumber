@@ -14,39 +14,23 @@ public class SummerDressesSteps {
         this.summerdressesPage = summerdressesPage;
     }
 
-    @Given("I navigate the automationpractice url")
-    public void iNavigateTheAutomationpracticeUrl() throws Throwable {
-        summerdressesPage.openAutomationPage();
+    @Given("I navigate to the automationpractice url")
+    public void iNavigateTheAutomationpracticeUrl() throws Throwable { summerdressesPage.openAutomationPage(); }
 
-    }
-
-    @Then("I should see the home page is displyed with popular and bestsellers links")
-    public void iShouldSeeTheHomePageIsDisplyed() {
-        summerdressesPage.assertHomepage();
-
-    }
-
+    @Then("I should see the home page displayed")
+    public void iShouldSeeTheHomePageIsDisplayed() { summerdressesPage.assertHomepage();}
 
     @When("I click on women section")
-    public void iClickOnWomenSection() {
-        summerdressesPage.clickWomenDresses();
-    }
+    public void iClickOnWomenSection() { summerdressesPage.clickWomenDresses(); }
 
     @Then("I should see tops and dresses subcategories displayed")
-    public void iShouldSeeTopsAndDressesSubcategoriesDisplayed() {
-        summerdressesPage.assertsubCategories();
-    }
+    public void iShouldSeeTopsAndDressesSubcategoriesDisplayed() { summerdressesPage.assertsubCategories(); }
 
     @And("I click on dresses")
-    public void iClickOnDresses() {
-        summerdressesPage.clickOnDresses();
-
-    }
+    public void iClickOnDresses() { summerdressesPage.clickOnDresses(); }
 
     @Then("I should see dresses page displayed with subcategories")
-    public void iShouldSeeDressesPageDisplayedWithSubcategories() {
-        summerdressesPage.assertDressesPage();
-    }
+    public void iShouldSeeDressesPageDisplayedWithSubcategories() { summerdressesPage.assertDressesPage(); }
 
     @And("I click on summer dresses section")
     public void iClickOnSummerDressesSection() {
@@ -63,36 +47,22 @@ public class SummerDressesSteps {
         summerdressesPage.sortTheDresses();
     }
 
-
-    @And("I clicked printed chiffon dress")
-    public void iAddedPrintedChiffonDressToTheCart() {
-        summerdressesPage.clickOndress1();
-
-    }
-
+    @And("I click printed chiffon dress")
+    public void iAddedPrintedChiffonDressToTheCart() { summerdressesPage.clickOndress1(); }
 
     @And("I select size")
-    public void iSelectSize() {
-        summerdressesPage.selectsize();
+    public void iSelectSize() { summerdressesPage.selectsize(); }
 
-    }
-
-    @And("I click colour")
-    public void iClickColour() {
-        summerdressesPage.clickcolour();
-
-    }
+    @And("I select colour")
+    public void iSelectColour() { summerdressesPage.clickcolour();}
 
     @And("I click add to cart")
     public void iClickAddToCart() {
         summerdressesPage.clickAddToCart();
     }
 
-    @Then("message \"([^\"]*)\" is displayed")
-    public void messageIsDisplayed(String message) {
-        summerdressesPage.assertMessage(message);
-
-    }
+    @Then("the message \"([^\"]*)\" is displayed")
+    public void messageIsDisplayed(String message) { summerdressesPage.assertMessage(message); }
 
     @And("I click proceed to checkout")
     public void iClickProceedToCheckout() {
@@ -100,10 +70,7 @@ public class SummerDressesSteps {
     }
 
     @Then("I should see \"([^\"]*)\" is in the cart")
-    public void iShouldSeeIsInTheCart(String dress1) {
-        summerdressesPage.assertDress1(dress1);
-
-    }
+    public void iShouldSeeIsInTheCart(String dress1) { summerdressesPage.assertDress1(dress1); }
 
     @And("I cleared the cart")
     public void iClearedTheCart() {

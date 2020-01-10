@@ -36,7 +36,6 @@ public abstract class BasePageObject {
         }
     }
 
-
     protected void click(WebElement element) {
         try {
             element.click();
@@ -45,7 +44,6 @@ public abstract class BasePageObject {
             throw e;
         }
     }
-
 
     protected void clickAndWait(WebElement element, final int timeoutInSeconds) {
         try {
@@ -56,6 +54,7 @@ public abstract class BasePageObject {
             throw e;
         }
     }
+
     protected void waitAndClick(WebElement element) {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver(), maxWaitTime);
@@ -66,6 +65,7 @@ public abstract class BasePageObject {
             throw e;
         }
     }
+
     public String waitAndgetText(WebElement element, final int timeoutInSeconds) {
         try {
             WebDriverWait wait = new WebDriverWait(this.driver(), timeoutInSeconds);
@@ -82,8 +82,6 @@ public abstract class BasePageObject {
         System.out.println("Page source: " + driver().getPageSource());
     }
 
-
-
     public  void waitForPageToLoad()  {
         wait(2);
         JavascriptExecutor js = (JavascriptExecutor)webDriverHandler.getDriver();
@@ -91,7 +89,6 @@ public abstract class BasePageObject {
         for(String state = (String)js.executeScript("return document.readyState", new Object[0]); !state.equals("complete"); state = (String)js.executeScript("return document.readyState", new Object[0])) {
             wait(2);
         }
-
     }
 
     public  void wait(int timeToWaitInSec) {
@@ -100,7 +97,6 @@ public abstract class BasePageObject {
         } catch (InterruptedException var2) {
             var2.printStackTrace();
         }
-
     }
 
 

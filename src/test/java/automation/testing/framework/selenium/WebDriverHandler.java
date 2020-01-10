@@ -5,13 +5,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.openqa.selenium.remote.CapabilityType;
 
 
 import java.util.concurrent.TimeUnit;
@@ -39,7 +34,7 @@ public class WebDriverHandler {
         WebDriver driver;
         switch (browserName) {
             case "firefox":
-                String firefoxdriverpath = env.valueOf("firefoxDriver");
+                String firefoxdriverpath = env.valueOf("firefoxDriverLocation");
                 System.setProperty("webdriver.gecko.driver",firefoxdriverpath );
                 System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
                 FirefoxOptions options = new FirefoxOptions();
@@ -66,17 +61,14 @@ public class WebDriverHandler {
         }
         options.setAcceptInsecureCerts(true);
 
-        String driverLocation = StringUtils.defaultIfBlank(env.valueOf("driverOSDir"), "mac");
+        String chromedriverpath = env.valueOf("chromeDriverLocation");
+        System.setProperty("webdriver.chrome.driver",chromedriverpath);
 
-        System.setProperty("webdriver.chrome.driver", String.format(env.valueOf("chromeDriverLocation"), driverLocation));
 
         return new ChromeDriver(options);
-
     }
-
 
     public void closeDriver() {
         driver.quit();
     }
-
 }

@@ -23,7 +23,6 @@ public class SeleniumHook {
     public void initWebDriver() {
         webDriverHandler.initWebDriver();
         webDriverHandler.getDriver().manage().window().maximize();
-
     }
 
     @After("@ui")

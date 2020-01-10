@@ -82,8 +82,6 @@ public class SummerDresses_PO extends BasePageObject {
 
     private WebElement printedSummerDress;
 
-
-
     @FindBy(id = "bigpic")
     private WebElement summerDressDisplay;
 
@@ -93,8 +91,6 @@ public class SummerDresses_PO extends BasePageObject {
     public SummerDresses_PO(WebDriverHandler driverHandler) {
         super(driverHandler);
         PageFactory.initElements(driverHandler.getDriver(), this);
-
-
     }
 
     public boolean homePageLogoDisplayed() {
@@ -113,10 +109,7 @@ public class SummerDresses_PO extends BasePageObject {
         clickAndWait(womenLink, 5);
     }
 
-    public String assertTops() {
-        return getText(tops);
-
-    }
+    public String assertTops() { return getText(tops); }
 
     public String assertDresses() {
         return getText(dresses);
@@ -130,11 +123,7 @@ public class SummerDresses_PO extends BasePageObject {
         return getText(casualDresses);
     }
 
-
-    public String assertSubcategoryHeading() {
-        return getText(subcategoryHeading);
-
-    }
+    public String assertSubcategoryHeading() { return getText(subcategoryHeading); }
 
     public void clickSummerDresses() {
         clickAndWait(summerDressesSection, 15);
@@ -152,7 +141,6 @@ public class SummerDresses_PO extends BasePageObject {
         clickAndWait(printedDress, 30);
     }
 
-
     public WebElement selSize() {
         return size;
     }
@@ -161,16 +149,11 @@ public class SummerDresses_PO extends BasePageObject {
         click(yellowColour);
     }
 
-    public void addToCart() {
-        waitAndClick(addDresses);
-
-    }
-
+    public void addToCart() { waitAndClick(addDresses); }
 
     public String getMessage() {
         return waitAndgetText(successMessage, 5);
     }
-
 
     public void ProceedCheckOut() {
         waitAndClick(checkOutButton);
@@ -180,24 +163,17 @@ public class SummerDresses_PO extends BasePageObject {
         return waitAndgetText(dress1, 5);
     }
 
-    public void deletedItem() {
-        click(delete);
-
-    }
+    public void deletedItem() { click(delete); }
 
     public String getAlertMessage() {
-        return waitAndgetText(alertWarning, 5);
+        return waitAndgetText(alertWarning, 15);
     }
 
     public void clickDres() {
         clickAndWait(dressTab, 10);
     }
 
-    public void clickPrintedDress() {
-        clickAndWait(printedSummerDress, 30);
-
-    }
-
+    public void clickPrintedDress() { clickAndWait(printedSummerDress, 30); }
 
     public boolean summerDressDisplayed() {
         return summerDressDisplay.isDisplayed();

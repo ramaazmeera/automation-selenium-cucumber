@@ -6,7 +6,6 @@ import automation.testing.framework.selenium.WebDriverHandler;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -17,12 +16,10 @@ public class SummerdressesPage {
 
     private final WebDriverHandler webDriverHandler;
 
-
     public SummerdressesPage(SummerDresses_PO summerDresses_po, EnvironmentHandler environmentHandler, WebDriverHandler webDriverHandler) {
         this.summerDresses_po = summerDresses_po;
         this.environmentHandler = environmentHandler;
         this.webDriverHandler = webDriverHandler;
-
     }
 
     public void openAutomationPage() {
@@ -34,7 +31,6 @@ public class SummerdressesPage {
         Assert.assertTrue(summerDresses_po.homePageLogoDisplayed());
         Assert.assertTrue(summerDresses_po.popularLinkDisplayed());
         Assert.assertTrue(summerDresses_po.bestsellerLinkDisplayed());
-
     }
 
     public void clickWomenDresses() {
@@ -44,7 +40,6 @@ public class SummerdressesPage {
     public void assertsubCategories() {
         assertThat("Tops subcategory not displayed", summerDresses_po.assertTops().equalsIgnoreCase("Tops"));
         assertThat("Dresses subcategory not displayed", summerDresses_po.assertDresses().equalsIgnoreCase("Dresses"));
-
     }
 
     public void clickOnDresses() {
@@ -52,20 +47,16 @@ public class SummerdressesPage {
     }
 
     public void assertDressesPage() {
-
         assertThat("Subcategory heading not displayed", summerDresses_po.assertSubcategoryHeading(), is("Subcategories"));
         assertThat("Casual dresses subcategory not displayed", summerDresses_po.assertCasualDresses().equalsIgnoreCase("Casual Dresses"));
-
     }
 
     public void clickOnSummerDresses() {
         summerDresses_po.clickSummerDresses();
-
     }
 
     public void assertSummerDressesPage() {
         assertThat("Summer dressses page not displayed", summerDresses_po.summerDressesPage(), is("Summer Dresses"));
-
     }
 
     public void sortTheDresses() {
@@ -75,14 +66,13 @@ public class SummerdressesPage {
 
     public void clickOndress1() {
         summerDresses_po.selectDress();
+        //  Taking little bit longer to load the page so adding below mwthod
         summerDresses_po.waitForPageToLoad();
     }
 
     public void selectsize() {
-
         Select size = new Select(summerDresses_po.selSize());
         size.selectByValue("1");
-
     }
 
     public void clickcolour() {
@@ -91,12 +81,10 @@ public class SummerdressesPage {
 
     public void clickAddToCart() {
         summerDresses_po.addToCart();
-
     }
 
     public void assertMessage(String message) {
         assertThat("Message not displayed", summerDresses_po.getMessage(), is(message));
-
     }
 
     public void clickCheckOutButton() {
@@ -121,11 +109,9 @@ public class SummerdressesPage {
 
     public void clickPrintedSummerDress() {
         summerDresses_po.clickPrintedDress();
+    //  Taking little bit longer to load the page so added below method
         summerDresses_po.waitForPageToLoad();
-//        webDriverHandler.getDriver().switchTo().frame(0);
-
         Assert.assertTrue(summerDresses_po.summerDressDisplayed());
-
     }
 
     public void assertPrintedSummerDress() {
