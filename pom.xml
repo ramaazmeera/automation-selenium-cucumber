@@ -25,6 +25,7 @@
     <junit.version>5.3.1</junit.version>
     <cucumber.version>4.2.0</cucumber.version>
     <selenium.java.version>3.141.0</selenium.java.version>
+    <web.driver.manager.version>3.7.1</web.driver.manager.version>
   </properties>
 
   <dependencies>
@@ -52,6 +53,11 @@
       <artifactId>cucumber-picocontainer</artifactId>
       <version>${cucumber.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>${web.driver.manager.version}</version>
     </dependency>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>

@@ -1,6 +1,7 @@
 package automation.testing.framework.selenium;
 
 import automation.testing.framework.config.EnvironmentHandler;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -34,13 +35,15 @@ public class WebDriverHandler {
         WebDriver driver;
         switch (browserName) {
             case "firefox":
-                String firefoxdriverpath = env.valueOf("firefoxDriverLocation");
-                System.setProperty("webdriver.gecko.driver",firefoxdriverpath );
+//                String firefoxdriverpath = env.valueOf("firefoxDriverLocation");
+//                System.setProperty("webdriver.gecko.driver",firefoxdriverpath );
+
                 System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
                 FirefoxOptions options = new FirefoxOptions();
                 if (StringUtils.equalsIgnoreCase(env.valueOf("headless.mode"), "false")) {
                     options.setHeadless(false);
                 }
+                WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver(options);
                 break;
 
@@ -61,14 +64,19 @@ public class WebDriverHandler {
         }
         options.setAcceptInsecureCerts(true);
 
-        String chromedriverpath = env.valueOf("chromeDriverLocation");
-        System.setProperty("webdriver.chrome.driver",chromedriverpath);
-
+//        String chromedriverpath = env.valueOf("chromeDriverLocation");
+//        System.setProperty("webdriver.chrome.driver",chromedriverpath);
+        WebDriverManager.chromedriver().setup();
 
         return new ChromeDriver(options);
+
+
     }
 
     public void closeDriver() {
         driver.quit();
     }
 }
+
+
+

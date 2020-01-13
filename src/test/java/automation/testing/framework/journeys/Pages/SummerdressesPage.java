@@ -66,7 +66,7 @@ public class SummerdressesPage {
 
     public void clickOndress1() {
         summerDresses_po.selectDress();
-        //  Taking little bit longer to load the page so adding below mwthod
+        //  Taking little bit longer to load the page so adding below method
         summerDresses_po.waitForPageToLoad();
     }
 
@@ -111,6 +111,10 @@ public class SummerdressesPage {
         summerDresses_po.clickPrintedDress();
     //  Taking little bit longer to load the page so added below method
         summerDresses_po.waitForPageToLoad();
+    //  Need to add below code when we run in windows because this website opening iframe when I click on dress in chrome chrome browser,
+        //  firefox browser is working fine without iframe
+    //  webDriverHandler.getDriver().switchTo().frame(0);
+
         Assert.assertTrue(summerDresses_po.summerDressDisplayed());
     }
 
