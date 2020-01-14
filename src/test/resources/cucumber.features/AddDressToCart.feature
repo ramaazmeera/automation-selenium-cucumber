@@ -11,7 +11,7 @@ Feature: This feature is to verify online shopping functionality for a given web
       And I click on summer dresses section
      Then I should see summer dresses displayed
 
-  @ui1
+  @ui
   Scenario: Verify if user is able to add a summer dress from women's section into the cart and delete the same from the cart successfully
 
 #    sorting is not loading the page so commenting it

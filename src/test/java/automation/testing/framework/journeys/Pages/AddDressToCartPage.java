@@ -59,11 +59,18 @@ public class AddDressToCartPage {
 
     public void clickPrintedSummerDress() {
         addDressToCart_po.clickPrintedDress();
-        //  Taking little bit longer to load the page so added below method
+
+// Taking little bit longer to load the page so added below method
+
         addDressToCart_po.waitForPageToLoad();
-        //  Need to add below code when we run in windows because this website opening iframe when I click on dress in chrome chrome browser,
-        //  firefox browser is working fine without iframe
-        //  webDriverHandler.getDriver().switchTo().frame(0);
+
+// Please UNCOMMENT the below line of code if you want to the run this test in windows operating system using Chrorme browser as this website is using iframes when user clicks printed summer dress,
+
+// Please COMMENT the below line of code if you want to the run this test in below environments and browsers:
+// Windows with Firefox AND
+// MAC with any browser
+
+        //webDriverHandler.getDriver().switchTo().frame(0);
 
         Assert.assertTrue(addDressToCart_po.summerDressDisplayed());
     }

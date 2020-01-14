@@ -1,37 +1,29 @@
 # AUTOMATIONPRACTICE-FUNCTIONAL-TEST
+
 This is a sample implementation of functional test using Cucumber and Selenium framework.
-## Framework used
+
+## Framework used:
 * Cucumber
 * Junit
 * Java
+* Selenium
 
-Reporting:
-cluecumber
+##For Reporting used:
+* cluecumber
+* To get the pie chart reports, navigate into target and to generated-report and access report (index.html) in any of the displayed browsers on top right hand corner.
 
+* headless mode - optional
 
-## Current capability
-* Browser based tests
-  * Selenium
-  * headless mode - optional
+## Running tests:
 
-## Running tests
+## Running using maven target in terminal:
+mvn clean verify - this will run tests in chrome (default browser).
 
-#### running from IDE
-* Run individual tests such as RunAllCucumberTests.java or RunUICucumberTests.java. 
-* By default it will run against `dev` environment. 
-
-
-#### running from maven
-Chrome: mvn clean verify
-
-To run in firefox: mvn clean verify -Dbrowser=firefox
-
+To run in firefox use this target: mvn clean verify -Dbrowser=firefox
 
 * All possible profiles are listed under pom.xml.
 
-#### Tests will run in mac and windows
-
-used webdriver manager for to get the latest drivers's for windows and mac
+## This test can be executed in both windows and mac, in order to do this, this framework used webdriver manager to get the latest drivers for windows and mac.
 
 
    
