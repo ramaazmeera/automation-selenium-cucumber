@@ -98,7 +98,7 @@
           <generatedHtmlReportDirectory>${project.build.directory}/generated-report
           </generatedHtmlReportDirectory>
           <customParameters>
-            <Framework_Name>ESA Functional Test Suite</Framework_Name>
+            <Framework_Name>Automation Functional Test Suite</Framework_Name>
             <Empty_Parameter/>
           </customParameters>
         </configuration>

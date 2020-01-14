@@ -8,6 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.CapabilityType;
 
 
 import java.util.concurrent.TimeUnit;
@@ -35,8 +38,6 @@ public class WebDriverHandler {
         WebDriver driver;
         switch (browserName) {
             case "firefox":
-//                String firefoxdriverpath = env.valueOf("firefoxDriverLocation");
-//                System.setProperty("webdriver.gecko.driver",firefoxdriverpath );
 
                 System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
                 FirefoxOptions options = new FirefoxOptions();
@@ -45,6 +46,16 @@ public class WebDriverHandler {
                 }
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver(options);
+                break;
+
+            case "ie":
+                WebDriverManager.iedriver().setup();
+                InternetExplorerOptions internetExplorerOptions = new InternetExplorerOptions();
+                internetExplorerOptions.setCapability("EnableNativeEvents", false);
+                internetExplorerOptions.setCapability("ignoreZoomSetting", true);
+                internetExplorerOptions.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+                internetExplorerOptions.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
+                driver = new InternetExplorerDriver(internetExplorerOptions);
                 break;
 
 
@@ -64,8 +75,6 @@ public class WebDriverHandler {
         }
         options.setAcceptInsecureCerts(true);
 
-//        String chromedriverpath = env.valueOf("chromeDriverLocation");
-//        System.setProperty("webdriver.chrome.driver",chromedriverpath);
         WebDriverManager.chromedriver().setup();
 
         return new ChromeDriver(options);

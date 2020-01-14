@@ -23,20 +23,16 @@ cluecumber
 
 #### running from maven
 Chrome: mvn clean verify
+
 To run in firefox: mvn clean verify -Dbrowser=firefox
 
 
 * All possible profiles are listed under pom.xml.
 
-#### To run  tests in windows
+#### Tests will run in mac and windows
 
-Need to change chrome driver path in WebDriverHandler class
+used webdriver manager for to get the latest drivers's for windows and mac
 
-String chromedriverpath = env.valueOf("chromeDriverWindows");
-
-firefox driver path to
-
-String firefoxdriverpath = env.valueOf("firefoxDriverWindows");
 
    
 

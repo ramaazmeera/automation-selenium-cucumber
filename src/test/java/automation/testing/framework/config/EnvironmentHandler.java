@@ -22,7 +22,7 @@ public class EnvironmentHandler {
 
     private void initEnvironment() {
         String envt = System.getProperty("environment");
-        envt = StringUtils.isBlank(envt) ? "dev" : envt.trim();
+        envt = StringUtils.isBlank(envt) ? "local" : envt.trim();
         loadEnvironmentProperties(envt);
         environmentProps.put("environment", envt);
     }
