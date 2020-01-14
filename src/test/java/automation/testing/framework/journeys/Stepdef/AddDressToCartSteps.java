@@ -44,8 +44,8 @@ public class AddDressToCartSteps {
         dresssesPage.clickOnSummerDresses();
     }
 
-    @Then("I should see summer dresses dispalyed")
-    public void iShouldSeeSummerDressesDispalyed() {
+    @Then("I should see summer dresses displayed")
+    public void iShouldSeeSummerDressesDisplayed() {
         dresssesPage.assertSummerDressesPage();
     }
 
