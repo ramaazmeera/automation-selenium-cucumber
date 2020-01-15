@@ -45,9 +45,7 @@ public class AddDressToCartSteps {
     }
 
     @Then("I should see summer dresses displayed")
-    public void iShouldSeeSummerDressesDisplayed() {
-        dresssesPage.assertSummerDressesPage();
-    }
+    public void iShouldSeeSummerDressesDisplayed() { dresssesPage.assertSummerDressesPage();}
 
     @And("I sort the items by low to high price")
     public void iSortTheItemsByLowToHighPrice() {

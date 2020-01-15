@@ -26,6 +26,16 @@ To run in firefox use this target: mvn clean verify -Dbrowser=firefox
 ## This test can be executed in both windows and mac, in order to do this, this framework used webdriver manager to get the latest drivers for windows and mac.
 
 
+
+    Please UNCOMMENT the below line of code in "AddDressToCartPage class" if you want to the run this test in windows operating system using Chrorme browser as this website is using iframes when user clicks printed summer dress,
+
+    Please COMMENT the below line of code if you want to the run this test in below environments and browsers:
+    Windows with Firefox AND
+    MAC with any browser
+
+        //webDriverHandler.getDriver().switchTo().frame(0);
+
+
    
 
 
