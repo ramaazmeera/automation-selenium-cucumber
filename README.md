@@ -17,9 +17,9 @@ This is a sample implementation of functional test using Cucumber and Selenium f
 ## Running tests:
 
 ## Running using maven target in terminal:
-mvn clean verify - this will run tests in chrome (default browser).
+* mvn clean verify - this will run tests in chrome (default browser).
 
-To run in firefox use this target: mvn clean verify -Dbrowser=firefox
+* To run in firefox use this target: mvn clean verify -Dbrowser=firefox
 
 * All possible profiles are listed under pom.xml.
 
@@ -27,13 +27,13 @@ To run in firefox use this target: mvn clean verify -Dbrowser=firefox
 
 
 
-    Please UNCOMMENT the below line of code in "AddDressToCartPage class" if you want to the run this test in windows operating system using Chrorme browser as this website is using iframes when user clicks printed summer dress,
+* Please UNCOMMENT the below line of code in "AddDressToCartPage class" if you want to the run this test in windows operating system using Chrorme browser as this website is using iframes when user clicks printed summer dress,
 
-    Please COMMENT the below line of code if you want to the run this test in below environments and browsers:
-    Windows with Firefox AND
-    MAC with any browser
+* Please COMMENT the below line of code if you want to the run this test in below environments and browsers:
+  Windows with Firefox AND
+  MAC with any browser
 
-        //webDriverHandler.getDriver().switchTo().frame(0);
+  //webDriverHandler.getDriver().switchTo().frame(0);
 
 
    

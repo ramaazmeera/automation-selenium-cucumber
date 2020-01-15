@@ -41,7 +41,6 @@ public class DresssesPage {
 
     public void clickOndress1() {
         dresses_po.selectDress();
-        //  Taking little bit longer to load the page so adding below method
         dresses_po.waitForPageToLoad();
     }
 

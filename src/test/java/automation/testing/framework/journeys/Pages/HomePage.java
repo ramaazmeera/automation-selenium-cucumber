@@ -2,16 +2,21 @@ package automation.testing.framework.journeys.Pages;
 
 import automation.testing.framework.config.EnvironmentHandler;
 import automation.testing.framework.journeys.PageObject.Home_PO;
+import automation.testing.framework.selenium.WebDriverHandler;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class HomePage {
 
     private final Home_PO home_po;
     private final EnvironmentHandler environmentHandler;
+    private final WebDriverHandler webDriverHandler;
 
-    public HomePage(Home_PO home_po,EnvironmentHandler environmentHandler){
+    public HomePage(Home_PO home_po,EnvironmentHandler environmentHandler,WebDriverHandler webDriverHandler){
         this.home_po=home_po;
         this.environmentHandler=environmentHandler;
+        this.webDriverHandler=webDriverHandler;
     }
 
     public void openAutomationPage() {
@@ -27,4 +32,14 @@ public class HomePage {
 
     public void clickWomenDresses() { home_po.clickWomen();}
 
+    public void selectSummerDresses() {
+        Actions actions = new Actions(webDriverHandler.getDriver());
+        WebElement womenMenu = home_po.hooverToWomen();
+        WebElement summerDress = home_po.hooverToSummerDresss();
+
+        actions.moveToElement(womenMenu).perform();
+        actions.moveToElement(summerDress).perform();
+        home_po.clickSDress();
+
+    }
 }

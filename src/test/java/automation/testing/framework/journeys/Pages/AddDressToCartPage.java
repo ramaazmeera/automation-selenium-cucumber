@@ -1,6 +1,5 @@
 package automation.testing.framework.journeys.Pages;
 
-import automation.testing.framework.config.EnvironmentHandler;
 import automation.testing.framework.journeys.PageObject.AddDressToCart_PO;
 import automation.testing.framework.selenium.WebDriverHandler;
 import org.junit.Assert;
@@ -11,12 +10,10 @@ import static org.hamcrest.core.Is.is;
 public class AddDressToCartPage {
 
     private final AddDressToCart_PO addDressToCart_po;
-    private final EnvironmentHandler environmentHandler;
     private final WebDriverHandler webDriverHandler;
 
-    public AddDressToCartPage(AddDressToCart_PO addDressToCart_po, EnvironmentHandler environmentHandler, WebDriverHandler webDriverHandler) {
+    public AddDressToCartPage(AddDressToCart_PO addDressToCart_po, WebDriverHandler webDriverHandler) {
         this.addDressToCart_po = addDressToCart_po;
-        this.environmentHandler = environmentHandler;
         this.webDriverHandler = webDriverHandler;
     }
 
@@ -59,9 +56,6 @@ public class AddDressToCartPage {
 
     public void clickPrintedSummerDress() {
         addDressToCart_po.clickPrintedDress();
-
-// Taking little bit longer to load the page so added below method
-
         addDressToCart_po.waitForPageToLoad();
 
 // Please UNCOMMENT the below line of code if you want to the run this test in windows operating system using Chrorme browser as this website is using iframes when user clicks printed summer dress,
