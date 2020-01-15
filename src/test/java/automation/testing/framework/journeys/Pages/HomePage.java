@@ -32,14 +32,4 @@ public class HomePage {
 
     public void clickWomenDresses() { home_po.clickWomen();}
 
-    public void selectSummerDresses() {
-        Actions actions = new Actions(webDriverHandler.getDriver());
-        WebElement womenMenu = home_po.hooverToWomen();
-        WebElement summerDress = home_po.hooverToSummerDresss();
-
-        actions.moveToElement(womenMenu).perform();
-        actions.moveToElement(summerDress).perform();
-        home_po.clickSDress();
-
-    }
 }

@@ -4,12 +4,11 @@ Feature: This feature is to verify online shopping functionality for a given web
 
     Given I navigate to the automationpractice url
      Then I should see the home page displayed
-     When I selected summer dresses from women's section
-#     When I click on women section
-#     Then I should see tops and dresses subcategories displayed in women page
-#      And I click on dresses
-#     Then I should see dresses page displayed with subcategories
-#      And I click on summer dresses section
+     When I click on women section
+     Then I should see tops and dresses subcategories displayed in women page
+      And I click on dresses
+     Then I should see dresses page displayed with subcategories
+      And I click on summer dresses section
      Then I should see summer dresses displayed
 
   @ui

@@ -102,8 +102,4 @@ public class AddDressToCartSteps {
         AddDressToCartPage.assertPrintedSummerDress();
     }
 
-    @When("I selected summer dresses from women's section")
-    public void iSelectedSummerDressesFromWomenSSection() {
-        homePage.selectSummerDresses();
-    }
 }

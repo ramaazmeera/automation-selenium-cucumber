@@ -20,13 +20,6 @@ public class Home_PO extends BasePageObject {
     @FindBy(linkText = "Women")
     private WebElement womenLink;
 
-    @FindBy(css = "#block_top_menu > ul > li:nth-child(1) > a")
-    private WebElement womenTab;
-
-    @FindBy(css = "#block_top_menu > ul > li:nth-child(1) > ul > li:nth-child(2) > ul > li:nth-child(3) > a")
-    private  WebElement summerDresses;
-
-
 
     public Home_PO(WebDriverHandler driverHandler) {
         super(driverHandler);
@@ -49,16 +42,4 @@ public class Home_PO extends BasePageObject {
         clickAndWait(womenLink, 5);
     }
 
-    public WebElement hooverToWomen() {
-        return womenTab;
-
-    }
-
-    public WebElement hooverToSummerDresss() {
-        return summerDresses;
-    }
-
-    public void clickSDress() {
-        clickAndWait(summerDresses,15);
-    }
 }
