@@ -1,8 +1,6 @@
 package automation.testing.framework.journeys.Pages;
 
 import automation.testing.framework.journeys.PageObject.AddDressToCart_PO;
-import automation.testing.framework.selenium.WebDriverHandler;
-import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -10,11 +8,10 @@ import static org.hamcrest.core.Is.is;
 public class AddDressToCartPage {
 
     private final AddDressToCart_PO addDressToCart_po;
-    private final WebDriverHandler webDriverHandler;
 
-    public AddDressToCartPage(AddDressToCart_PO addDressToCart_po, WebDriverHandler webDriverHandler) {
+    public AddDressToCartPage(AddDressToCart_PO addDressToCart_po) {
         this.addDressToCart_po = addDressToCart_po;
-        this.webDriverHandler = webDriverHandler;
+
     }
 
     public void selectsize() {

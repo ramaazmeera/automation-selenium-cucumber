@@ -1,7 +1,6 @@
 package automation.testing.framework.journeys.Pages;
 
 import automation.testing.framework.journeys.PageObject.Dresses_PO;
-import automation.testing.framework.selenium.WebDriverHandler;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -9,11 +8,9 @@ import static org.hamcrest.core.Is.is;
 
 public class DresssesPage {
     private final Dresses_PO dresses_po;
-    private final WebDriverHandler webDriverHandler;
 
-    public DresssesPage(Dresses_PO dresses_po,WebDriverHandler webDriverHandler){
+    public DresssesPage(Dresses_PO dresses_po){
         this.dresses_po=dresses_po;
-        this.webDriverHandler=webDriverHandler;
     }
 
     public void assertsubCategories() {
@@ -28,6 +25,8 @@ public class DresssesPage {
     public void assertDressesPage() {
         assertThat("Subcategory heading not displayed", dresses_po.assertSubcategoryHeading(), is("Subcategories"));
         assertThat("Casual dresses subcategory not displayed", dresses_po.assertCasualDresses().equalsIgnoreCase("Casual Dresses"));
+        assertThat("Evening dresses subcategory not displayed", dresses_po.assertEveningDresses().equalsIgnoreCase("Evening Dresses"));
+        assertThat("Summer dresses subcategory not displayed", dresses_po.assertSummerDresses().equalsIgnoreCase("Summer Dresses"));
     }
 
     public void clickOnSummerDresses() {

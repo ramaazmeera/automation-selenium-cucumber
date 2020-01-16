@@ -20,8 +20,14 @@ public class Dresses_PO extends BasePageObject {
     @FindBy(xpath = "//a[@class='subcategory-name'][contains(text(),'Casual Dresses')]")
     private WebElement casualDresses;
 
+    @FindBy(css = "#subcategories > ul > li:nth-child(2) > h5 > a")
+    private WebElement eveningDresses;
+
     @FindBy(css = "#subcategories > ul > li:nth-child(3) > div.subcategory-image > a > img")
     private WebElement summerDressesSection;
+
+    @FindBy(xpath = "//*[@id=\"subcategories\"]/ul/li[3]/h5/a")
+    private WebElement summerDressesText;
 
     @FindBy(xpath = "//*[@class='category-name']")
     private WebElement summerDressesPage;
@@ -80,5 +86,13 @@ public class Dresses_PO extends BasePageObject {
 
     public boolean summerDressDisplayed() {
         return summerDressDisplay.isDisplayed();
+    }
+
+    public String assertSummerDresses() {
+        return getText(summerDressesText);
+    }
+
+    public String assertEveningDresses() {
+        return getText(eveningDresses);
     }
 }

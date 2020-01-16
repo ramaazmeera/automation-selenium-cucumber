@@ -26,6 +26,9 @@ public class HomePage {
 
     public void assertHomepage() {
         Assert.assertTrue(home_po.homePageLogoDisplayed());
+        Assert.assertTrue(home_po.womenButtonDisplayed());
+        Assert.assertTrue(home_po.dressesButtonDisplayed());
+        Assert.assertTrue(home_po.TshirtButtonDisplayed());
         Assert.assertTrue(home_po.popularLinkDisplayed());
         Assert.assertTrue(home_po.bestsellerLinkDisplayed());
     }

@@ -12,6 +12,15 @@ public class Home_PO extends BasePageObject {
     private WebElement homePageLogo;
 
     @FindBy(xpath = "//*[contains(text(),'Popular')]")
+    private WebElement womenButton;
+
+    @FindBy(xpath = "//*[contains(text(),'Popular')]")
+    private WebElement dressButton;
+
+    @FindBy(xpath = "//*[contains(text(),'Popular')]")
+    private WebElement shirtButton;
+
+    @FindBy(xpath = "//*[contains(text(),'Popular')]")
     private WebElement popular;
 
     @FindBy(xpath = "//*[contains(text(),'Best Sellers')]")
@@ -51,4 +60,15 @@ public class Home_PO extends BasePageObject {
 
     public void clickSDress() { clickAndWait(summerDresses,15);}
 
+    public boolean womenButtonDisplayed() {
+        return womenButton.isDisplayed();
+    }
+
+    public boolean dressesButtonDisplayed() {
+        return dressButton.isDisplayed();
+    }
+
+    public boolean TshirtButtonDisplayed() {
+        return shirtButton.isDisplayed();
+    }
 }
