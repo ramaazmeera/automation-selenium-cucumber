@@ -27,7 +27,7 @@ public class AddDressToCartSteps {
     @Then("I should see the home page displayed")
     public void iShouldSeeTheHomePageIsDisplayed() { homePage.assertHomepage();}
 
-    @When("I click on women section")
+    @When("I click on women's section")
     public void iClickOnWomenSection() { homePage.clickWomenDresses(); }
 
     @Then("I should see tops and dresses subcategories displayed in women page")
@@ -92,9 +92,9 @@ public class AddDressToCartSteps {
         AddDressToCartPage.clickOnDressesTab();
     }
 
-    @When("I selected another summer dress")
+    @When("I selected printed summer dress")
     public void iClickedOnPrintedSummerDress() {
-        AddDressToCartPage.clickPrintedSummerDress();
+        dresssesPage.clickPrintedSummerDress();
     }
 
     @Then("I should see Printed Summer Dress is in the cart")
@@ -102,4 +102,8 @@ public class AddDressToCartSteps {
         AddDressToCartPage.assertPrintedSummerDress();
     }
 
+    @When("I selected summer dresses from women's section")
+    public void iSelectedSummerDressesFromWomenSSection()throws InterruptedException {
+        homePage.selectSummerDresses();
+    }
 }

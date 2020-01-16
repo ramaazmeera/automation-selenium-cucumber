@@ -32,4 +32,12 @@ public class HomePage {
 
     public void clickWomenDresses() { home_po.clickWomen();}
 
+    public void selectSummerDresses() throws InterruptedException {
+        Actions actions = new Actions(webDriverHandler.getDriver());
+        WebElement womenMenu = home_po.hooverToWomen();
+        actions.moveToElement(womenMenu).build().perform();
+        home_po.wait(2);
+        home_po.clickSDress();
+
+    }
 }

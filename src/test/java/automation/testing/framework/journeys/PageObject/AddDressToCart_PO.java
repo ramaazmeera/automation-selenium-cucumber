@@ -36,12 +36,6 @@ public class AddDressToCart_PO extends BasePageObject {
     @FindBy(css = "#block_top_menu > ul > li.sfHoverForce > a")
     private WebElement dressTab;
 
-    @FindBy(css = ".last-line.last-item-of-tablet-line .product_img_link > img.replace-2x.img-responsive")
-
-    private WebElement printedSummerDress;
-
-    @FindBy(id = "bigpic")
-    private WebElement summerDressDisplay;
 
     @FindBy(xpath = "//td[@class='cart_description']//a[contains(text(),'Printed Summer Dress')]")
     private WebElement PrintedDressInCart;
@@ -78,12 +72,6 @@ public class AddDressToCart_PO extends BasePageObject {
     public String getAlertMessage() { return waitAndgetText(alertWarning, 15);}
 
     public void clickDres() { clickAndWait(dressTab, 10);}
-
-    public void clickPrintedDress() { clickAndWait(printedSummerDress, 30); }
-
-    public boolean summerDressDisplayed() {
-        return summerDressDisplay.isDisplayed();
-    }
 
     public String assertPrintedSummerDressInCart() {
         return waitAndgetText(PrintedDressInCart,5);

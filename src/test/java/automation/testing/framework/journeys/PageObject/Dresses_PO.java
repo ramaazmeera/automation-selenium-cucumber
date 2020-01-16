@@ -29,8 +29,14 @@ public class Dresses_PO extends BasePageObject {
     @FindBy(id = "selectProductSort")
     private WebElement dropdown;
 
-    @FindBy(css = "img[title*='Chiffon Dress']")
+    @FindBy(xpath = "//*[@id=\"center_column\"]/ul/li[3]/div/div[2]/h5/a")
     private WebElement printedDress;
+
+    @FindBy(css = "#center_column > ul > li.ajax_block_product.col-xs-12.col-sm-6.col-md-4.last-line.last-item-of-tablet-line.last-mobile-line > div > div.right-block > h5 > a")
+    private WebElement printedSummerDress;
+
+    @FindBy(id = "bigpic")
+    private WebElement summerDressDisplay;
 
 
     public Dresses_PO(WebDriverHandler driverHandler) {
@@ -68,5 +74,11 @@ public class Dresses_PO extends BasePageObject {
 
     public void selectDress() {
         clickAndWait(printedDress, 30);
+    }
+
+    public void clickPrintedDress() { clickAndWait(printedSummerDress, 30); }
+
+    public boolean summerDressDisplayed() {
+        return summerDressDisplay.isDisplayed();
     }
 }

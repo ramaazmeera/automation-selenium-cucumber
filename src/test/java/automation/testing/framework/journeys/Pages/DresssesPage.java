@@ -1,15 +1,19 @@
 package automation.testing.framework.journeys.Pages;
 
 import automation.testing.framework.journeys.PageObject.Dresses_PO;
+import automation.testing.framework.selenium.WebDriverHandler;
+import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class DresssesPage {
     private final Dresses_PO dresses_po;
+    private final WebDriverHandler webDriverHandler;
 
-    public DresssesPage(Dresses_PO dresses_po){
+    public DresssesPage(Dresses_PO dresses_po,WebDriverHandler webDriverHandler){
         this.dresses_po=dresses_po;
+        this.webDriverHandler=webDriverHandler;
     }
 
     public void assertsubCategories() {
@@ -44,4 +48,11 @@ public class DresssesPage {
         dresses_po.waitForPageToLoad();
     }
 
+    public void clickPrintedSummerDress() {
+        dresses_po.clickPrintedDress();
+        dresses_po.waitForPageToLoad();
+
+        Assert.assertTrue(dresses_po.summerDressDisplayed());
+
+    }
 }

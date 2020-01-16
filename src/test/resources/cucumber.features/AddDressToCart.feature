@@ -1,19 +1,20 @@
 Feature: This feature is to verify online shopping functionality for a given website.
 
-  Background:
+  Background: User is on home page:
 
     Given I navigate to the automationpractice url
      Then I should see the home page displayed
-     When I click on women section
+
+
+  @ui
+  Scenario: Verify if user is able to add a summer dress from women's section into the cart and delete the same from the cart successfully
+
+     When I click on women's section
      Then I should see tops and dresses subcategories displayed in women page
       And I click on dresses
      Then I should see dresses page displayed with subcategories
       And I click on summer dresses section
      Then I should see summer dresses displayed
-
-  @ui
-  Scenario: Verify if user is able to add a summer dress from women's section into the cart and delete the same from the cart successfully
-
 #    sorting is not loading the page so commenting it
 #     And I sort the items by low to high price
 #    Then I should see items sorted in low to high
@@ -30,7 +31,9 @@ Feature: This feature is to verify online shopping functionality for a given web
   @ui
   Scenario: Verify if user is able to add a different summer dress successfully
 
-     When I selected another summer dress
+     When I selected summer dresses from women's section
+     Then I should see summer dresses displayed
+     When I selected printed summer dress
       And I click add to cart
      Then the message "Product successfully added to your shopping cart" is displayed
       And I click proceed to checkout
