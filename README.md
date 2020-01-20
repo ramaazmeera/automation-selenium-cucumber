@@ -8,7 +8,7 @@ This is a sample implementation of functional test using Cucumber and Selenium f
 Reporting:
 cluecumber
 
-
+g
 ## Current capability
 * Browser based tests
   * Selenium
