@@ -1,4 +1,4 @@
-# AUTOMATIONPRACTICE-FUNCTIONAL-TEST
+# AUTOMATION-PRACTICE-FUNCTIONAL-TEST
 
 This is a sample implementation of functional test using Cucumber and Selenium framework.
 
@@ -8,15 +8,14 @@ This is a sample implementation of functional test using Cucumber and Selenium f
 * Java
 * Selenium
 
-##For Reporting used:
+## For reporting this framework used:
 * cluecumber
+
 * To get the pie chart reports, navigate into target and to generated-report and access report (index.html) in any of the displayed browsers on top right hand corner.
 
 * headless mode - optional
 
-## Running tests:
-
-## Running using maven target in terminal:
+## Running tests using maven target in terminal:
 
 * To run in chrome use this target(default browser):  mvn clean verify
 
