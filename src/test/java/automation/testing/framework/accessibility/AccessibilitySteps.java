@@ -1,5 +1,6 @@
 package automation.testing.framework.accessibility;
 
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 import java.io.IOException;
@@ -17,4 +18,5 @@ public class AccessibilitySteps {
         accessibilityHelper.testAccessibility("home page");
 
     }
+
 }
