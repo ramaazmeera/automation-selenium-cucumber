@@ -9,101 +9,131 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import java.io.IOException;
+
 public class AddDressToCartSteps {
 
-    private final AddDressToCartPage AddDressToCartPage;
-    private final HomePage homePage;
-    private final DresssesPage dresssesPage;
+  private final AddDressToCartPage AddDressToCartPage;
+  private final HomePage homePage;
+  private final DresssesPage dresssesPage;
 
-    public AddDressToCartSteps(AddDressToCartPage AddDressToCartPage, HomePage homePage, DresssesPage dresssesPage) {
-        this.AddDressToCartPage = AddDressToCartPage;
-        this.homePage=homePage;
-        this.dresssesPage=dresssesPage;
-    }
 
-    @Given("I navigate to the automationpractice url")
-    public void iNavigateTheAutomationpracticeUrl() {homePage.openAutomationPage();}
+  public AddDressToCartSteps(
+      AddDressToCartPage AddDressToCartPage, HomePage homePage, DresssesPage dresssesPage) {
+    this.AddDressToCartPage = AddDressToCartPage;
+    this.homePage = homePage;
+    this.dresssesPage = dresssesPage;
+  }
 
-    @Then("I should see the home page displayed")
-    public void iShouldSeeTheHomePageIsDisplayed() { homePage.assertHomepage();}
+  @Given("I navigate to the automationpractice url")
+  public void iNavigateTheAutomationpracticeUrl()throws IOException {
+    homePage.openAutomationPage();
 
-    @When("I click on women's section")
-    public void iClickOnWomenSection() { homePage.clickWomenDresses(); }
 
-    @Then("I should see tops and dresses subcategories displayed in women page")
-    public void iShouldSeeTopsAndDressesSubcategoriesDisplayed() { dresssesPage.assertsubCategories(); }
+  }
 
-    @And("I click on dresses")
-    public void iClickOnDresses() { dresssesPage.clickOnDresses(); }
+  @Then("I should see the home page displayed")
+  public void iShouldSeeTheHomePageIsDisplayed() {
+    homePage.assertHomepage();
+  }
 
-    @Then("I should see dresses page displayed with subcategories")
-    public void iShouldSeeDressesPageDisplayedWithSubcategories() { dresssesPage.assertDressesPage(); }
+  @When("I click on women's section")
+  public void iClickOnWomenSection() {
+    homePage.clickWomenDresses();
+  }
 
-    @And("I click on summer dresses section")
-    public void iClickOnSummerDressesSection() {
-        dresssesPage.clickOnSummerDresses();
-    }
+  @Then("I should see tops and dresses subcategories displayed in women page")
+  public void iShouldSeeTopsAndDressesSubcategoriesDisplayed() {
+    dresssesPage.assertsubCategories();
+  }
 
-    @Then("I should see summer dresses displayed")
-    public void iShouldSeeSummerDressesDisplayed() { dresssesPage.assertSummerDressesPage();}
+  @And("I click on dresses")
+  public void iClickOnDresses() {
+    dresssesPage.clickOnDresses();
+  }
 
-    @And("I sort the items by low to high price")
-    public void iSortTheItemsByLowToHighPrice() {
-        dresssesPage.sortTheDresses();
-    }
+  @Then("I should see dresses page displayed with subcategories")
+  public void iShouldSeeDressesPageDisplayedWithSubcategories() {
+    dresssesPage.assertDressesPage();
+  }
 
-    @When("I click printed chiffon dress")
-    public void iAddedPrintedChiffonDressToTheCart() { dresssesPage.clickOndress1(); }
+  @And("I click on summer dresses section")
+  public void iClickOnSummerDressesSection() {
+    dresssesPage.clickOnSummerDresses();
+  }
 
-    @And("I select size")
-    public void iSelectSize() { AddDressToCartPage.selectsize(); }
+  @Then("I should see summer dresses displayed")
+  public void iShouldSeeSummerDressesDisplayed() {
+    dresssesPage.assertSummerDressesPage();
+  }
 
-    @And("I select colour")
-    public void iSelectColour() { AddDressToCartPage.clickcolour();}
+  @And("I sort the items by low to high price")
+  public void iSortTheItemsByLowToHighPrice() {
+    dresssesPage.sortTheDresses();
+  }
 
-    @And("I click add to cart")
-    public void iClickAddToCart() {
-        AddDressToCartPage.clickAddToCart();
-    }
+  @When("I click printed chiffon dress")
+  public void iAddedPrintedChiffonDressToTheCart() {
+    dresssesPage.clickOndress1();
+  }
 
-    @Then("the message \"([^\"]*)\" is displayed")
-    public void messageIsDisplayed(String message) { AddDressToCartPage.assertMessage(message); }
+  @And("I select size")
+  public void iSelectSize() {
+    AddDressToCartPage.selectsize();
+  }
 
-    @And("I click proceed to checkout")
-    public void iClickProceedToCheckout() {
-        AddDressToCartPage.clickCheckOutButton();
-    }
+  @And("I select colour")
+  public void iSelectColour() {
+    AddDressToCartPage.clickcolour();
+  }
 
-    @Then("I should see \"([^\"]*)\" is in the cart")
-    public void iShouldSeeIsInTheCart(String dress1) { AddDressToCartPage.assertDress1(dress1); }
+  @And("I click add to cart")
+  public void iClickAddToCart() {
+    AddDressToCartPage.clickAddToCart();
+  }
 
-    @And("I cleared the cart")
-    public void iClearedTheCart() {
-        AddDressToCartPage.clearCart();
-    }
+  @Then("the message \"([^\"]*)\" is displayed")
+  public void messageIsDisplayed(String message) {
+    AddDressToCartPage.assertMessage(message);
+  }
 
-    @Then("I should see \"([^\"]*)\" alert")
-    public void iShouldSeeAlert(String alertMessage) {
-        AddDressToCartPage.assertAlert(alertMessage);
-    }
+  @And("I click proceed to checkout")
+  public void iClickProceedToCheckout() {
+    AddDressToCartPage.clickCheckOutButton();
+  }
 
-    @And("I click on dresses tab")
-    public void iClickOnDressesTab() {
-        AddDressToCartPage.clickOnDressesTab();
-    }
+  @Then("I should see \"([^\"]*)\" is in the cart")
+  public void iShouldSeeIsInTheCart(String dress1) {
+    AddDressToCartPage.assertDress1(dress1);
+  }
 
-    @When("I selected printed summer dress")
-    public void iClickedOnPrintedSummerDress() {
-        dresssesPage.clickPrintedSummerDress();
-    }
+  @And("I cleared the cart")
+  public void iClearedTheCart() {
+    AddDressToCartPage.clearCart();
+  }
 
-    @Then("I should see Printed Summer Dress is in the cart")
-    public void iShouldSeePrintedSummerDressIsInTheCart() {
-        AddDressToCartPage.assertPrintedSummerDress();
-    }
+  @Then("I should see \"([^\"]*)\" alert")
+  public void iShouldSeeAlert(String alertMessage) {
+    AddDressToCartPage.assertAlert(alertMessage);
+  }
 
-    @When("I selected summer dresses from women's section")
-    public void iSelectedSummerDressesFromWomenSSection()throws InterruptedException {
-        homePage.selectSummerDresses();
-    }
+  @And("I click on dresses tab")
+  public void iClickOnDressesTab() {
+    AddDressToCartPage.clickOnDressesTab();
+  }
+
+  @When("I selected printed summer dress")
+  public void iClickedOnPrintedSummerDress() {
+    dresssesPage.clickPrintedSummerDress();
+  }
+
+  @Then("I should see Printed Summer Dress is in the cart")
+  public void iShouldSeePrintedSummerDressIsInTheCart() {
+    AddDressToCartPage.assertPrintedSummerDress();
+  }
+
+  @When("I selected summer dresses from women's section")
+  public void iSelectedSummerDressesFromWomenSSection() throws InterruptedException {
+    homePage.selectSummerDresses();
+  }
 }
