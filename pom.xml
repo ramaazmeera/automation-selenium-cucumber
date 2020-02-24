@@ -21,7 +21,7 @@
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
     <cucumber.test.name>RunAllCucumberTests.java</cucumber.test.name>
-    <cluecumber-report.version>1.6.5</cluecumber-report.version>
+    <cluecumber-report.version>2.3.4</cluecumber-report.version>
     <junit.version>5.3.1</junit.version>
     <cucumber.version>4.2.0</cucumber.version>
     <selenium.java.version>3.141.0</selenium.java.version>
