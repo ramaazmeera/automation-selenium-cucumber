@@ -1,6 +1,6 @@
 Feature:Accessibility - Miscellaneous
 
-  @ui
+  @ui1
 
   Scenario: Automation practice page has no accessibility violations
 
