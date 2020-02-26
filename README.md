@@ -54,8 +54,8 @@ This is a sample implementation of functional test using Cucumber and Selenium f
 * Don't get the page element by bypassing the Page Object. Page Object should encapsulate the selenium web elements.
 * Don't manipulate the dom from outside the Page Object.
 * Page object shouldn't contain assertions.
-* Don't write cucumber steps under uk.gov.dwp.sdp.functionaltest.selenium package.
-* Don't write selenium based code under uk.gov.dwp.sdp.functionaltest.stepdef package.
+* Don't write cucumber steps under
+* Don't write selenium based code under
 * Don't Add `@ui` tag in non-gui or non-selenium based feature or scenario.
 
 

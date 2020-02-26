@@ -15,8 +15,8 @@
 
 
   <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.version>3.7.0</maven.compiler.version>
+    <maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
     <build.timestamp>${maven.build.timestamp}</build.timestamp>
@@ -32,6 +32,7 @@
     <aws.s3.version>1.11.475</aws.s3.version>
     <rabbit.version>5.0.0</rabbit.version>
     <jackson.version>2.9.9.2</jackson.version>
+<!--    <cucable-plugin.version>1.5.2</cucable-plugin.version>-->
 
   </properties>
 
@@ -124,6 +125,28 @@
 
     <!--    AWS dependency-->
 
+    <!--    API dependency-->
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>fluent-hc</artifactId>
+      <version>4.5.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.nanohttpd</groupId>
+      <artifactId>nanohttpd-webserver</artifactId>
+      <version>2.1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+
+    <!--    API dependency-->
+
     <!--    these dependencies for Accessibility-->
 
     <dependency>
@@ -150,6 +173,21 @@
 <!--      <version>2.5</version>-->
 <!--    </dependency>-->
     <!--    these dependencies for Accessibility-->
+
+    <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>2.10.5</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.google.code.tempus-fugit/tempus-fugit -->
+    <dependency>
+      <groupId>com.google.code.tempus-fugit</groupId>
+      <artifactId>tempus-fugit</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
 
@@ -158,16 +196,51 @@
 
   <build>
     <plugins>
+      <!--      this plugin to use unit test>-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-surefire-plugin</artifactId>-->
+<!--        <version>3.0.0-M4</version>-->
+<!--        <configuration>-->
+<!--          <includes>-->
+<!--            <include>${cucumber.test.name}</include>-->
+<!--          </includes>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
+
+      <!--      maven-failsafe-plugin to use integration testing and works for cluecumber reports>-->
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.0</version>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>3.0.0-M4</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+            <configuration>
+              <includes>
+                <include>${cucumber.test.name}</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.version}</version>
         <configuration>
-          <includes>
-            <include>${cucumber.test.name}</include>
-          </includes>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
+
+
+      <!--    //Reporting till here-->
 
       <plugin>
         <groupId>com.trivago.rta</groupId>
@@ -183,12 +256,11 @@
           </execution>
         </executions>
         <configuration>
-          <sourceJsonReportDirectory>${project.build.directory}/cucumber-report</sourceJsonReportDirectory>
+          <sourceJsonReportDirectory>${project.build.directory}/cucumber-report/</sourceJsonReportDirectory>
           <generatedHtmlReportDirectory>${project.build.directory}/generated-report
           </generatedHtmlReportDirectory>
           <customParameters>
             <Framework_Name>Automation Functional Test Suite</Framework_Name>
-            <Empty_Parameter/>
           </customParameters>
         </configuration>
       </plugin>
@@ -214,7 +286,7 @@
       <!--          <sourceRunnerTemplateFile>src/test/resources/parallel/cucable.template</sourceRunnerTemplateFile>-->
       <!--          <sourceFeatures>src/test/resources/cucumber.features</sourceFeatures>-->
       <!--          <generatedFeatureDirectory>${project.basedir}/src/test/resources/cucumber.features</generatedFeatureDirectory>-->
-      <!--          <generatedRunnerDirectory>${project.basedir}/src/test/java/uk/gov/dwp/ESA/functionaltest/runners</generatedRunnerDirectory>-->
+      <!--          <generatedRunnerDirectory>${project.basedir}/src/test/java/automation/testing/feamework/runners</generatedRunnerDirectory>-->
       <!--        </configuration>-->
       <!--      </plugin>-->
       <!--      <plugin>-->
@@ -259,25 +331,25 @@
     </plugins>
   </build>
 
-  <profiles>
-    <profile>
-      <id>all</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-    </profile>
-    <profile>
-      <id>uiOnly</id>
-      <properties>
-        <cucumber.test.name>RunUICucumberTests.java</cucumber.test.name>
-      </properties>
-    </profile>
-    <profile>
-      <id>wipOnly</id>
-      <properties>
-        <cucumber.test.name>RunWipCucumberTests.java</cucumber.test.name>
-      </properties>
-    </profile>
-  </profiles>
+<!--  <profiles>-->
+<!--    <profile>-->
+<!--      <id>all</id>-->
+<!--      <activation>-->
+<!--        <activeByDefault>true</activeByDefault>-->
+<!--      </activation>-->
+<!--    </profile>-->
+<!--    <profile>-->
+<!--      <id>uiOnly</id>-->
+<!--      <properties>-->
+<!--        <cucumber.test.name>RunUICucumberTests.java</cucumber.test.name>-->
+<!--      </properties>-->
+<!--    </profile>-->
+<!--    <profile>-->
+<!--      <id>wipOnly</id>-->
+<!--      <properties>-->
+<!--        <cucumber.test.name>RunWipCucumberTests.java</cucumber.test.name>-->
+<!--      </properties>-->
+<!--    </profile>-->
+<!--  </profiles>-->
 
 </project>

@@ -30,7 +30,6 @@ public class SeleniumHook {
     public void afterTestRun(Scenario scenario) throws MalformedURLException {
         if (scenario.isFailed()) {
             webDriverHandler.getDriver().manage().window().maximize();
-
             attachScreenShot(scenario);
         }
         closeDriver();
