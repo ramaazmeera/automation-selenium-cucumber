@@ -1,355 +1,351 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.example.automationpractice</groupId>
-  <artifactId>automationpractice</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <groupId>com.example.automationpractice</groupId>
+    <artifactId>automationpractice</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-  <name>automationpractice</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
-
-
-
-  <properties>
-    <maven.compiler.version>3.7.0</maven.compiler.version>
-    <maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
-    <build.timestamp>${maven.build.timestamp}</build.timestamp>
-    <cucumber.test.name>RunAllCucumberTests.java</cucumber.test.name>
-    <cluecumber-report.version>1.6.5</cluecumber-report.version>
-    <junit.version>5.3.1</junit.version>
-    <cucumber.version>4.2.0</cucumber.version>
-    <selenium.java.version>3.141.0</selenium.java.version>
-    <web.driver.manager.version>3.7.1</web.driver.manager.version>
-    <aws.sqs-extended.version>1.0.2</aws.sqs-extended.version>
-    <aws.sqs.version>1.11.458</aws.sqs.version>
-    <aws.sns.version>1.11.458</aws.sns.version>
-    <aws.s3.version>1.11.475</aws.s3.version>
-    <rabbit.version>5.0.0</rabbit.version>
-    <jackson.version>2.9.9.2</jackson.version>
-<!--    <cucable-plugin.version>1.5.2</cucable-plugin.version>-->
-
-  </properties>
-
-  <dependencies>
-
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <version>3.8</version>
-    </dependency>
-
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>${cucumber.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-junit</artifactId>
-      <version>${cucumber.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-picocontainer</artifactId>
-      <version>${cucumber.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>${web.driver.manager.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>${selenium.java.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest-all</artifactId>
-      <version>1.3</version>
-      <scope>test</scope>
-    </dependency>
-
-    <!--    AWS dependency-->
-
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-sqs</artifactId>
-      <version>${aws.sqs.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>amazon-sqs-java-extended-client-lib</artifactId>
-      <version>${aws.sqs-extended.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-sns</artifactId>
-      <version>${aws.sns.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.amazonaws</groupId>
-      <artifactId>aws-java-sdk-s3</artifactId>
-      <version>${aws.s3.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.rabbitmq</groupId>
-      <artifactId>amqp-client</artifactId>
-      <version>${rabbit.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
+    <name>automationpractice</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
 
 
-<!--    <dependency>-->
-<!--      <groupId>com.amazonaws</groupId>-->
-<!--      <artifactId>aws-java-sdk</artifactId>-->
-<!--      <version>${aws.java.sdk.version}</version>-->
-<!--    </dependency>-->
-<!--  </dependencies>-->
+    <properties>
+        <maven.compiler.version>3.7.0</maven.compiler.version>
+        <maven.failsafe.plugin.version>2.19.1</maven.failsafe.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
+        <build.timestamp>${maven.build.timestamp}</build.timestamp>
+        <cucumber.test.name>RunAllCucumberTests.java</cucumber.test.name>
+        <cluecumber-report.version>1.6.5</cluecumber-report.version>
+        <junit.version>5.3.1</junit.version>
+        <cucumber.version>4.2.0</cucumber.version>
+        <selenium.java.version>3.141.0</selenium.java.version>
+        <web.driver.manager.version>3.7.1</web.driver.manager.version>
+        <aws.sqs-extended.version>1.0.2</aws.sqs-extended.version>
+        <aws.sqs.version>1.11.458</aws.sqs.version>
+        <aws.sns.version>1.11.458</aws.sns.version>
+        <aws.s3.version>1.11.475</aws.s3.version>
+        <rabbit.version>5.0.0</rabbit.version>
+        <jackson.version>2.9.9.2</jackson.version>
+        <!--    <cucable-plugin.version>1.5.2</cucable-plugin.version>-->
 
-    <!--    AWS dependency-->
+    </properties>
 
-    <!--    API dependency-->
+    <dependencies>
 
-    <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>fluent-hc</artifactId>
-      <version>4.5.10</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8</version>
+        </dependency>
 
-    <dependency>
-      <groupId>com.nanohttpd</groupId>
-      <artifactId>nanohttpd-webserver</artifactId>
-      <version>2.1.1</version>
-    </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${web.driver.manager.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.java.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.10.1</version>
-    </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
 
-    <!--    API dependency-->
+        <!--    AWS dependency-->
 
-    <!--    these dependencies for Accessibility-->
-
-    <dependency>
-      <groupId>com.deque</groupId>
-      <artifactId>axe-selenium</artifactId>
-      <version>3.0</version>
-      <scope>test</scope>
-    </dependency>
-<!--    <dependency>-->
-<!--      <groupId>org.seleniumhq.selenium</groupId>-->
-<!--      <artifactId>selenium-server</artifactId>-->
-<!--      <version>2.42.0</version>-->
-<!--    </dependency>-->
-
-<!--    <dependency>-->
-<!--      <groupId>org.apache.commons</groupId>-->
-<!--      <artifactId>commons-io</artifactId>-->
-<!--      <version>1.3.2</version>-->
-<!--    </dependency>-->
-
-<!--    <dependency>-->
-<!--      <groupId>commons-io</groupId>-->
-<!--      <artifactId>commons-io</artifactId>-->
-<!--      <version>2.5</version>-->
-<!--    </dependency>-->
-    <!--    these dependencies for Accessibility-->
-
-    <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
-    <dependency>
-      <groupId>joda-time</groupId>
-      <artifactId>joda-time</artifactId>
-      <version>2.10.5</version>
-    </dependency>
-
-    <!-- https://mvnrepository.com/artifact/com.google.code.tempus-fugit/tempus-fugit -->
-    <dependency>
-      <groupId>com.google.code.tempus-fugit</groupId>
-      <artifactId>tempus-fugit</artifactId>
-      <version>1.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-
-
-
-
-  <build>
-    <plugins>
-      <!--      this plugin to use unit test>-->
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-surefire-plugin</artifactId>-->
-<!--        <version>3.0.0-M4</version>-->
-<!--        <configuration>-->
-<!--          <includes>-->
-<!--            <include>${cucumber.test.name}</include>-->
-<!--          </includes>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
-
-      <!--      maven-failsafe-plugin to use integration testing and works for cluecumber reports>-->
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.0.0-M4</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
-            </goals>
-            <configuration>
-              <includes>
-                <include>${cucumber.test.name}</include>
-              </includes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${maven.compiler.version}</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-sqs</artifactId>
+            <version>${aws.sqs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>amazon-sqs-java-extended-client-lib</artifactId>
+            <version>${aws.sqs-extended.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-sns</artifactId>
+            <version>${aws.sns.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-s3</artifactId>
+            <version>${aws.s3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>${rabbit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
 
 
-      <!--    //Reporting till here-->
+        <!--    <dependency>-->
+        <!--      <groupId>com.amazonaws</groupId>-->
+        <!--      <artifactId>aws-java-sdk</artifactId>-->
+        <!--      <version>${aws.java.sdk.version}</version>-->
+        <!--    </dependency>-->
+        <!--  </dependencies>-->
 
-      <plugin>
-        <groupId>com.trivago.rta</groupId>
-        <artifactId>cluecumber-report-plugin</artifactId>
-        <version>${cluecumber-report.version}</version>
-        <executions>
-          <execution>
-            <id>report</id>
-            <phase>post-integration-test</phase>
-            <goals>
-              <goal>reporting</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <sourceJsonReportDirectory>${project.build.directory}/cucumber-report/</sourceJsonReportDirectory>
-          <generatedHtmlReportDirectory>${project.build.directory}/generated-report
-          </generatedHtmlReportDirectory>
-          <customParameters>
-            <Framework_Name>Automation Functional Test Suite</Framework_Name>
-          </customParameters>
-        </configuration>
-      </plugin>
+        <!--    AWS dependency-->
 
-      <!--    //Reporting till here-->
+        <!--    API dependency-->
 
-      <!--    //parallel run dependency-->
-      <!--      <plugin>-->
-      <!--        <groupId>com.trivago.rta</groupId>-->
-      <!--        <artifactId>cucable-plugin</artifactId>-->
-      <!--        <version>${cucable-plugin.version}</version>-->
-      <!--        <executions>-->
-      <!--          <execution>-->
-      <!--            <id>generate-test-resources</id>-->
-      <!--            <phase>generate-test-resources</phase>-->
-      <!--            <goals>-->
-      <!--              <goal>parallel</goal>-->
-      <!--            </goals>-->
-      <!--          </execution>-->
-      <!--        </executions>-->
-      <!--        <configuration>-->
-      <!--          &lt;!&ndash; Required properties &ndash;&gt;-->
-      <!--          <sourceRunnerTemplateFile>src/test/resources/parallel/cucable.template</sourceRunnerTemplateFile>-->
-      <!--          <sourceFeatures>src/test/resources/cucumber.features</sourceFeatures>-->
-      <!--          <generatedFeatureDirectory>${project.basedir}/src/test/resources/cucumber.features</generatedFeatureDirectory>-->
-      <!--          <generatedRunnerDirectory>${project.basedir}/src/test/java/automation/testing/feamework/runners</generatedRunnerDirectory>-->
-      <!--        </configuration>-->
-      <!--      </plugin>-->
-      <!--      <plugin>-->
-      <!--        <groupId>org.codehaus.mojo</groupId>-->
-      <!--        <artifactId>build-helper-maven-plugin</artifactId>-->
-      <!--        <version>${build.helper.plugin.version}</version>-->
-      <!--        <executions>-->
-      <!--          <execution>-->
-      <!--            <id>add-test-source</id>-->
-      <!--            <phase>generate-test-sources</phase>-->
-      <!--            <goals>-->
-      <!--              <goal>add-test-source</goal>-->
-      <!--            </goals>-->
-      <!--          </execution>-->
-      <!--        </executions>-->
-      <!--        <configuration>-->
-      <!--          <sources>-->
-      <!--            <source>${project.build.directory}/parallel/runners</source>-->
-      <!--          </sources>-->
-      <!--        </configuration>-->
-      <!--      </plugin>-->
-      <!--      <plugin>-->
-      <!--        <groupId>org.apache.maven.plugins</groupId>-->
-      <!--        <artifactId>maven-failsafe-plugin</artifactId>-->
-      <!--        <version>${maven.failsafe.plugin.version}</version>-->
-      <!--        <executions>-->
-      <!--          <execution>-->
-      <!--            <goals>-->
-      <!--              <goal>integration-test</goal>-->
-      <!--            </goals>-->
-      <!--            <configuration>-->
-      <!--              <forkCount>5</forkCount>-->
-      <!--              <reuseForks>true</reuseForks>-->
-      <!--              <rerunFailingTestsCount>4</rerunFailingTestsCount>-->
-      <!--            </configuration>-->
-      <!--          </execution>-->
-      <!--        </executions>-->
-      <!--      </plugin>-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>fluent-hc</artifactId>
+            <version>4.5.10</version>
+        </dependency>
 
-      <!--    //parallel run till here-->
+        <dependency>
+            <groupId>com.nanohttpd</groupId>
+            <artifactId>nanohttpd-webserver</artifactId>
+            <version>2.1.1</version>
+        </dependency>
 
-    </plugins>
-  </build>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.10.1</version>
+        </dependency>
 
-<!--  <profiles>-->
-<!--    <profile>-->
-<!--      <id>all</id>-->
-<!--      <activation>-->
-<!--        <activeByDefault>true</activeByDefault>-->
-<!--      </activation>-->
-<!--    </profile>-->
-<!--    <profile>-->
-<!--      <id>uiOnly</id>-->
-<!--      <properties>-->
-<!--        <cucumber.test.name>RunUICucumberTests.java</cucumber.test.name>-->
-<!--      </properties>-->
-<!--    </profile>-->
-<!--    <profile>-->
-<!--      <id>wipOnly</id>-->
-<!--      <properties>-->
-<!--        <cucumber.test.name>RunWipCucumberTests.java</cucumber.test.name>-->
-<!--      </properties>-->
-<!--    </profile>-->
-<!--  </profiles>-->
+        <!--    API dependency-->
+
+        <!--    these dependencies for Accessibility-->
+
+        <dependency>
+            <groupId>com.deque</groupId>
+            <artifactId>axe-selenium</artifactId>
+            <version>3.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!--    <dependency>-->
+        <!--      <groupId>org.seleniumhq.selenium</groupId>-->
+        <!--      <artifactId>selenium-server</artifactId>-->
+        <!--      <version>2.42.0</version>-->
+        <!--    </dependency>-->
+
+        <!--    <dependency>-->
+        <!--      <groupId>org.apache.commons</groupId>-->
+        <!--      <artifactId>commons-io</artifactId>-->
+        <!--      <version>1.3.2</version>-->
+        <!--    </dependency>-->
+
+        <!--    <dependency>-->
+        <!--      <groupId>commons-io</groupId>-->
+        <!--      <artifactId>commons-io</artifactId>-->
+        <!--      <version>2.5</version>-->
+        <!--    </dependency>-->
+        <!--    these dependencies for Accessibility-->
+
+        <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.5</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.google.code.tempus-fugit/tempus-fugit -->
+        <dependency>
+            <groupId>com.google.code.tempus-fugit</groupId>
+            <artifactId>tempus-fugit</artifactId>
+            <version>1.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <!--      this plugin to use unit test>-->
+            <!--      <plugin>-->
+            <!--        <groupId>org.apache.maven.plugins</groupId>-->
+            <!--        <artifactId>maven-surefire-plugin</artifactId>-->
+            <!--        <version>3.0.0-M4</version>-->
+            <!--        <configuration>-->
+            <!--          <includes>-->
+            <!--            <include>${cucumber.test.name}</include>-->
+            <!--          </includes>-->
+            <!--        </configuration>-->
+            <!--      </plugin>-->
+
+            <!--      maven-failsafe-plugin to use integration testing and works for cluecumber reports>-->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <includes>
+                                <include>${cucumber.test.name}</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+
+            <!--    //Reporting till here-->
+
+            <plugin>
+                <groupId>com.trivago.rta</groupId>
+                <artifactId>cluecumber-report-plugin</artifactId>
+                <version>${cluecumber-report.version}</version>
+                <executions>
+                    <execution>
+                        <id>report</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>reporting</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceJsonReportDirectory>${project.build.directory}/cucumber-report/</sourceJsonReportDirectory>
+                    <generatedHtmlReportDirectory>${project.build.directory}/generated-report
+                    </generatedHtmlReportDirectory>
+                    <customParameters>
+                        <Framework_Name>Automation Functional Test Suite</Framework_Name>
+                    </customParameters>
+                </configuration>
+            </plugin>
+
+            <!--    //Reporting till here-->
+
+            <!--    //parallel run dependency-->
+            <!--      <plugin>-->
+            <!--        <groupId>com.trivago.rta</groupId>-->
+            <!--        <artifactId>cucable-plugin</artifactId>-->
+            <!--        <version>${cucable-plugin.version}</version>-->
+            <!--        <executions>-->
+            <!--          <execution>-->
+            <!--            <id>generate-test-resources</id>-->
+            <!--            <phase>generate-test-resources</phase>-->
+            <!--            <goals>-->
+            <!--              <goal>parallel</goal>-->
+            <!--            </goals>-->
+            <!--          </execution>-->
+            <!--        </executions>-->
+            <!--        <configuration>-->
+            <!--          &lt;!&ndash; Required properties &ndash;&gt;-->
+            <!--          <sourceRunnerTemplateFile>src/test/resources/parallel/cucable.template</sourceRunnerTemplateFile>-->
+            <!--          <sourceFeatures>src/test/resources/cucumber.features</sourceFeatures>-->
+            <!--          <generatedFeatureDirectory>${project.basedir}/src/test/resources/cucumber.features</generatedFeatureDirectory>-->
+            <!--          <generatedRunnerDirectory>${project.basedir}/src/test/java/automation/testing/feamework/runners</generatedRunnerDirectory>-->
+            <!--        </configuration>-->
+            <!--      </plugin>-->
+            <!--      <plugin>-->
+            <!--        <groupId>org.codehaus.mojo</groupId>-->
+            <!--        <artifactId>build-helper-maven-plugin</artifactId>-->
+            <!--        <version>${build.helper.plugin.version}</version>-->
+            <!--        <executions>-->
+            <!--          <execution>-->
+            <!--            <id>add-test-source</id>-->
+            <!--            <phase>generate-test-sources</phase>-->
+            <!--            <goals>-->
+            <!--              <goal>add-test-source</goal>-->
+            <!--            </goals>-->
+            <!--          </execution>-->
+            <!--        </executions>-->
+            <!--        <configuration>-->
+            <!--          <sources>-->
+            <!--            <source>${project.build.directory}/parallel/runners</source>-->
+            <!--          </sources>-->
+            <!--        </configuration>-->
+            <!--      </plugin>-->
+            <!--      <plugin>-->
+            <!--        <groupId>org.apache.maven.plugins</groupId>-->
+            <!--        <artifactId>maven-failsafe-plugin</artifactId>-->
+            <!--        <version>${maven.failsafe.plugin.version}</version>-->
+            <!--        <executions>-->
+            <!--          <execution>-->
+            <!--            <goals>-->
+            <!--              <goal>integration-test</goal>-->
+            <!--            </goals>-->
+            <!--            <configuration>-->
+            <!--              <forkCount>5</forkCount>-->
+            <!--              <reuseForks>true</reuseForks>-->
+            <!--              <rerunFailingTestsCount>4</rerunFailingTestsCount>-->
+            <!--            </configuration>-->
+            <!--          </execution>-->
+            <!--        </executions>-->
+            <!--      </plugin>-->
+
+            <!--    //parallel run till here-->
+
+        </plugins>
+    </build>
+
+    <!--  <profiles>-->
+    <!--    <profile>-->
+    <!--      <id>all</id>-->
+    <!--      <activation>-->
+    <!--        <activeByDefault>true</activeByDefault>-->
+    <!--      </activation>-->
+    <!--    </profile>-->
+    <!--    <profile>-->
+    <!--      <id>uiOnly</id>-->
+    <!--      <properties>-->
+    <!--        <cucumber.test.name>RunUICucumberTests.java</cucumber.test.name>-->
+    <!--      </properties>-->
+    <!--    </profile>-->
+    <!--    <profile>-->
+    <!--      <id>wipOnly</id>-->
+    <!--      <properties>-->
+    <!--        <cucumber.test.name>RunWipCucumberTests.java</cucumber.test.name>-->
+    <!--      </properties>-->
+    <!--    </profile>-->
+    <!--  </profiles>-->
 
 </project>
