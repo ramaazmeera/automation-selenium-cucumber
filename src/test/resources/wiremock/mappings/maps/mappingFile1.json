@@ -1,0 +1,19 @@
+{
+  "request": {
+    "urlPattern": "/cucumber/rest/assured",
+    "method": "GET",
+    "headers": {
+      "name": {
+        "matches": "Rama"
+      }
+    }
+  },
+
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "responseFile1.json"
+  }
+}

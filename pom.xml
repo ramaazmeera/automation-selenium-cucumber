@@ -31,6 +31,9 @@
         <aws.s3.version>1.11.475</aws.s3.version>
         <rabbit.version>5.0.0</rabbit.version>
         <jackson.version>2.9.9.2</jackson.version>
+        <restassured.version>4.2.0</restassured.version>
+        <json-unit-assertj.version>2.14.0</json-unit-assertj.version>
+        <jetbrains-annotations.version>19.0.0</jetbrains-annotations.version>
         <!--    <cucable-plugin.version>1.5.2</cucable-plugin.version>-->
 
     </properties>
@@ -143,6 +146,33 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.10.1</version>
         </dependency>
+
+        <!--    API dependency-->
+
+        <!--REST Assured-->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>${restassured.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.javacrumbs.json-unit</groupId>
+            <artifactId>json-unit-assertj</artifactId>
+            <version>${json-unit-assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>${jetbrains-annotations.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
 
         <!--    API dependency-->
 

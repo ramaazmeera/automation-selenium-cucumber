@@ -1,0 +1,14 @@
+{
+  "request": {
+    "urlPattern": "/cucumber/rest/assured",
+    "method": "POST"
+  },
+
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "responseFile2.json"
+  }
+}

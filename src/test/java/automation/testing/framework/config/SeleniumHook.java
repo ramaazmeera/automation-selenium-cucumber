@@ -34,7 +34,7 @@ public class SeleniumHook {
 
     @After("@ui")
 
-    public void afterTestRun(Scenario scenario) throws MalformedURLException {
+    public void afterTestRun(Scenario scenario)  {
         if (scenario.isFailed()) {
             logTestFailure("UI", scenario.getName());
             for (byte[] screenshot : webDriverHandler.takeFullPageScreenShot()) {
@@ -42,6 +42,7 @@ public class SeleniumHook {
             }
         }
         webDriverHandler.destroyDriver();
+        logTestStep("UI", "END", scenario.getName());
     }
 
 //    public byte[] attachScreenShot(Scenario scenario)  {
@@ -60,6 +61,12 @@ public class SeleniumHook {
         LOG.warn("*******************************************************");
         LOG.warn("{} SCENARIO FAILED: {}", testType, scenarioName);
         LOG.warn("*******************************************************");
+    }
+
+    private void logTestStep(String testType, String testStep, String scenarioName) {
+        LOG.info("-------------------------------------------------------");
+        LOG.info("{} SCENARIO {}ED: {}", testType, testStep, scenarioName);
+        LOG.info("-------------------------------------------------------");
     }
 
 }

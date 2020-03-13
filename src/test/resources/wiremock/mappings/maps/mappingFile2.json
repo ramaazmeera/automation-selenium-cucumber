@@ -1,0 +1,19 @@
+{
+  "request": {
+    "urlPath": "/cucumber/rest/assured",
+    "method": "GET",
+    "queryParameters" : {
+      "name" : {
+        "equalTo" : "Azmeera"
+      }
+    }
+  },
+
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "responseFile1.json"
+  }
+}

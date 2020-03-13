@@ -5,6 +5,6 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "json:target/cucumber-report.json"}, features = "classpath:cucumber.features", tags = {"@ui", "not @todo"})
+@CucumberOptions(plugin = {"pretty", "json:target/cucumber-report.json"}, features = "classpath:cucumber.features", tags = {"@Api", "not @todo"})
 public class RunWipTestsOnly {
 }
