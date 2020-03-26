@@ -12,5 +12,5 @@ import org.junit.runner.RunWith;
       "html:target/cucumber-report/cucumber.html",
     },
     features = "classpath:cucumber.features",
-    tags = {"@Api"})
+    tags = {"@ui"})
 public class RunAllCucumberTests {}
